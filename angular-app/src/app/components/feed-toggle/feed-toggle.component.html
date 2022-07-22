@@ -1,0 +1,22 @@
+<button
+  (click)="toggleFeed()"
+  color="accent"
+  *ngIf="showingRequests"
+  mat-raised-button
+>
+  Ride Requests
+</button>
+<button (click)="toggleFeed()" *ngIf="showingRequests" mat-button>
+  Ride Offers
+</button>
+<button (click)="toggleFeed()" *ngIf="!showingRequests" mat-button>
+  Ride Requests
+</button>
+<button
+  color="accent"
+  (click)="toggleFeed()"
+  *ngIf="!showingRequests"
+  mat-raised-button
+>
+  Ride Offers
+</button>

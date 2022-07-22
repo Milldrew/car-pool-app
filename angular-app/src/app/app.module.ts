@@ -11,10 +11,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { BaseCardComponent } from './base-card/base-card.component';
+import { FeedToggleComponent } from './components/feed-toggle/feed-toggle.component';
 
 @NgModule({
-  declarations: [AppComponent, AppBarComponent, BaseCardComponent],
+  declarations: [
+    AppComponent,
+    AppBarComponent,
+    BaseCardComponent,
+    FeedToggleComponent,
+  ],
   imports: [
+    MatButtonModule,
     MatListModule,
     MatCardModule,
     MatSlideToggleModule,
