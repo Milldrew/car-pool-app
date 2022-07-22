@@ -1,3 +1,4 @@
+import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,10 +10,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppBarComponent } from './app-bar/app-bar.component';
+import { BaseCardComponent } from './base-card/base-card.component';
 
 @NgModule({
-  declarations: [AppComponent, AppBarComponent],
+  declarations: [AppComponent, AppBarComponent, BaseCardComponent],
   imports: [
+    MatListModule,
     MatCardModule,
     MatSlideToggleModule,
     MatButtonModule,
