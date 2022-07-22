@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { BaseCardComponent } from './base-card/base-card.component';
 import { FeedToggleComponent } from './components/feed-toggle/feed-toggle.component';
+import { NewsFeedBaseComponent } from './components/news-feed-base/news-feed-base.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FeedToggleComponent } from './components/feed-toggle/feed-toggle.compon
     AppBarComponent,
     BaseCardComponent,
     FeedToggleComponent,
+    NewsFeedBaseComponent,
   ],
   imports: [
     MatButtonModule,

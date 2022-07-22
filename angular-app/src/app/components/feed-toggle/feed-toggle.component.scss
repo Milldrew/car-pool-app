@@ -1,7 +1,34 @@
+@use "../../../responsive.scss" as responsive;
 :host {
-  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+
+button {
+  @include responsive.for-size(XSmall) {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  @include responsive.for-size(Small) {
+    width: 100%;
+    height: 40px;
+    font-size: 110%;
+  }
+  @include responsive.for-size(Medium) {
+    width: 100%;
+    height: 80px;
+  }
+  @include responsive.for-size(Large) {
+    font-size: 120%;
+    width: 100%;
+    height: 80px;
+  }
+  @include responsive.for-size(XLarge) {
+    font-size: 130%;
+    width: 100%;
+    height: 80px;
+  }
 }

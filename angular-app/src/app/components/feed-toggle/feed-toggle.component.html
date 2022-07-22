@@ -1,4 +1,5 @@
 <button
+  disableRipple="true"
   (click)="toggleFeed()"
   color="accent"
   *ngIf="showingRequests"
@@ -6,10 +7,20 @@
 >
   Ride Requests
 </button>
-<button (click)="toggleFeed()" *ngIf="showingRequests" mat-button>
+<button
+  (click)="toggleFeed()"
+  *ngIf="showingRequests"
+  mat-stroked-button
+  disableRipple="true"
+>
   Ride Offers
 </button>
-<button (click)="toggleFeed()" *ngIf="!showingRequests" mat-button>
+<button
+  (click)="toggleFeed()"
+  *ngIf="!showingRequests"
+  mat-stroked-button
+  disableRipple="true"
+>
   Ride Requests
 </button>
 <button
@@ -17,6 +28,7 @@
   (click)="toggleFeed()"
   *ngIf="!showingRequests"
   mat-raised-button
+  disableRipple="true"
 >
   Ride Offers
 </button>
