@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-feed-toggle',
@@ -6,11 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feed-toggle.component.scss'],
 })
 export class FeedToggleComponent implements OnInit {
-  constructor() {}
+  @Output()
+  isShowingRequests: EventEmitter<boolean>;
+  constructor() {
+    this.isShowingRequests = new EventEmitter();
+  }
   ngOnInit(): void {}
   showingRequests = true;
 
   toggleFeed() {
     this.showingRequests = !this.showingRequests;
+    this.isShowingRequests.emit(this.showingRequests);
   }
 }

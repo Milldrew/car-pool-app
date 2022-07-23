@@ -22,6 +22,11 @@ export class AppComponent {
       `mat-typography mat-app-background light ${theme}`
     );
   }
+  isShowingRequests: boolean = true;
+
+  handleFeedToggle(isShowingRequests: boolean) {
+    this.isShowingRequests = isShowingRequests;
+  }
 
   constructor(
     @Inject(DOCUMENT) private document: Document,

@@ -1,4 +1,6 @@
-<app-base-card> </app-base-card>
-<app-base-card> </app-base-card>
-<app-base-card> </app-base-card>
-<app-base-card> </app-base-card>
+<ng-container *ngIf="isShowingRequests">
+  <app-request-card> </app-request-card>
+</ng-container>
+<ng-container *ngIf="!isShowingRequests">
+  <app-offer-card> </app-offer-card>
+</ng-container>

@@ -13,6 +13,8 @@ import { AppBarComponent } from './app-bar/app-bar.component';
 import { BaseCardComponent } from './base-card/base-card.component';
 import { FeedToggleComponent } from './components/feed-toggle/feed-toggle.component';
 import { NewsFeedBaseComponent } from './components/news-feed-base/news-feed-base.component';
+import { OfferCardComponent } from './components/components/offer-card/offer-card.component';
+import { RequestCardComponent } from './components/components/request-card/request-card.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { NewsFeedBaseComponent } from './components/news-feed-base/news-feed-bas
     BaseCardComponent,
     FeedToggleComponent,
     NewsFeedBaseComponent,
+    OfferCardComponent,
+    RequestCardComponent,
   ],
   imports: [
     MatButtonModule,
