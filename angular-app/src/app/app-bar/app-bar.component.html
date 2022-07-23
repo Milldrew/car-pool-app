@@ -1,5 +1,11 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button aria-label="Example icon-button with menu icon">
+  <button
+    (click)="isInfoOpen = !isInfoOpen"
+    cdkOverlayOrigin
+    #trigger="cdkOverlayOrigin"
+    mat-icon-button
+    aria-label="Example icon-button with menu icon"
+  >
     <mat-icon>information</mat-icon>
   </button>
   <span class="example-spacer"></span>
@@ -9,3 +15,12 @@
     <mat-icon class="icon">dark_mode</mat-icon>
   </mat-slide-toggle>
 </mat-toolbar>
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isInfoOpen"
+>
+  <mat-card class="overlay-card" (click)="isInfoOpen = !isInfoOpen">
+    <app-info-overlay> </app-info-overlay>
+  </mat-card>
+</ng-template>
