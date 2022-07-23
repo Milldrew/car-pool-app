@@ -1,3 +1,4 @@
+import { OverlayModule } from '@angular/cdk/overlay';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -15,6 +16,7 @@ import { FeedToggleComponent } from './components/feed-toggle/feed-toggle.compon
 import { NewsFeedBaseComponent } from './components/news-feed-base/news-feed-base.component';
 import { OfferCardComponent } from './components/components/offer-card/offer-card.component';
 import { RequestCardComponent } from './components/components/request-card/request-card.component';
+import { InfoOverlayComponent } from './components/info-overlay/info-overlay.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,10 @@ import { RequestCardComponent } from './components/components/request-card/reque
     NewsFeedBaseComponent,
     OfferCardComponent,
     RequestCardComponent,
+    InfoOverlayComponent,
   ],
   imports: [
+    OverlayModule,
     MatButtonModule,
     MatListModule,
     MatCardModule,

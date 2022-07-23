@@ -6,6 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./app-bar.component.scss'],
 })
 export class AppBarComponent implements OnInit {
+  isInfoOpen = true;
   isDarkValue: boolean = false;
   @Output() public isDark: EventEmitter<boolean>;
   toggleIsDark() {
