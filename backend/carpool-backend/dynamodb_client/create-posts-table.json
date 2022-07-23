@@ -1,0 +1,19 @@
+{
+  "TableName": "PostTable",
+  "KeySchema": [{ "AttributeName": "postId", "KeyType": "HASH" }],
+  "AttributeDefinitions": [
+    { "AttributeName": "postId", "AttributeType": "S" },
+    { "AttributeName": "userId", "AttributeType": "S" },
+    { "AttributeName": "username", "AttributeType": "S" },
+    { "AttributeName": "date", "AttributeType": "S" },
+    { "AttributeName": "isRequest", "AttributeType": "BOOL" },
+    { "AttributeName": "seatingAmount", "AttributeType": "N" },
+    { "AttributeName": "phoneNumber", "AttributeType": "S" },
+    { "AttributeName": "moreInfo", "AttributeType": "S" },
+    { "AttributeName": "imgUrl", "AttributeType": "S" }
+  ],
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 1,
+    "WriteCapacityUnits": 1
+  }
+}

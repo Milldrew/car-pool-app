@@ -17,11 +17,11 @@ export class BaseCardComponent implements OnInit {
   @Input()
   seatingAmount: number = 2;
   @Input()
-  phoneNumber: string = '555-555-55555';
+  phoneNumber: undefined | string = '555-555-55555';
   @Input()
   moreInfo: string = 'Here is some more information';
   @Input()
-  imgUrl: string = 'Here is some more information';
+  imgUrl: string = 'http://imgurl.com';
   selectImage() {
     // Add logic for custom image here
     let randomNumber = Math.floor(Math.random() * 100);

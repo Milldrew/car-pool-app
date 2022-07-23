@@ -1,6 +1,8 @@
 <ng-container *ngIf="isShowingRequests">
-  <app-request-card> </app-request-card>
+  <app-request-card *ngFor="let request of requests" [postPayload]="request">
+  </app-request-card>
 </ng-container>
 <ng-container *ngIf="!isShowingRequests">
-  <app-offer-card> </app-offer-card>
+  <app-offer-card *ngFor="let offer of offers" [postPayload]="offer">
+  </app-offer-card>
 </ng-container>

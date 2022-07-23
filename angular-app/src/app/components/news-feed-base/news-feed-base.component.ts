@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { feedCardPayload } from 'src/app/core/models/feed-card-payload';
+import { PostsService } from 'src/app/core/services/http/posts.service';
 
 @Component({
   selector: 'app-news-feed-base',
@@ -13,7 +15,12 @@ export class NewsFeedBaseComponent implements OnInit {
     console.log('after checked is showing', this.isShowingRequests);
     this.isShowingRequests = this.isShowingRequests;
   }
-  constructor() {}
+  offers: feedCardPayload[];
+  requests: feedCardPayload[];
+  constructor(private posts: PostsService) {
+    this.offers = this.posts.mockOffersPosts;
+    this.requests = this.posts.mockRequestPosts;
+  }
 
   ngOnInit(): void {}
 }

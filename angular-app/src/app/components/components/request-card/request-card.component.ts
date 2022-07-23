@@ -1,5 +1,5 @@
 import { feedCardPayload } from 'src/app/core/models/feed-card-payload';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-request-card',
@@ -7,14 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request-card.component.scss'],
 })
 export class RequestCardComponent implements OnInit {
-  feedCardData: feedCardPayload = {
-    username: 'username',
-    date: 'date',
-    seatingAmount: 8,
-    phoneNumber: '555-555-5555',
-    moreInfo: 'more info here',
-    userImgUrl: 'img url',
-  };
+  feedCardData: feedCardPayload;
+
+  @Input()
+  postPayload: feedCardPayload;
+
   constructor() {}
 
   ngOnInit(): void {}

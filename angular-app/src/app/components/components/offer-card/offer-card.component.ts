@@ -1,5 +1,5 @@
 import { feedCardPayload } from '../../../core/models/feed-card-payload';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-offer-card',
@@ -17,6 +17,8 @@ export class OfferCardComponent implements OnInit {
   };
 
   constructor() {}
+  @Input()
+  postPayload: feedCardPayload;
 
   ngOnInit(): void {}
 }

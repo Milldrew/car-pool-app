@@ -1,9 +1,10 @@
 <app-base-card
-  username="Input name"
+  [username]="postPayload.username"
   [isRequest]="true"
   subName="is requesting a ride"
-  date="date"
-  [seatingAmount]="8"
-  phoneNumber="555-555-5555"
+  [date]="postPayload.date"
+  [seatingAmount]="postPayload.seatingAmount"
+  [phoneNumber]="postPayload.phoneNumber"
+  [imgUrl]="postPayload.userImgUrl"
 >
 </app-base-card>
