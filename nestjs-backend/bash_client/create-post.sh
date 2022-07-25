@@ -1,0 +1,1 @@
+curl  -d '{"userId": 3, "isRequest": true, "username": "username", "phoneNumber": "phoneNumber", "date": "date", "userImgUrl": "url", "moreInfo": "more information","seatingAmount": 3}' -H "Content-Type: application/json" http://localhost:3000/post
