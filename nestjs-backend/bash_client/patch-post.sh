@@ -1,0 +1,1 @@
+curl -X PATCH  -d '{"userId": 3, "isRequest": true, "username": "1234314234134PATCHED", "phoneNumber": "phoneNumber", "date": "date", "userImgUrl": "url", "moreInfo": "more information","seatingAmount": 3}' -H "Content-Type: application/json" http://localhost:3000/post/"$1"
