@@ -18,10 +18,10 @@ export class TypeormConnection {
       console.log('production config');
       ormConfig = {
         type: 'postgres',
-        host: '35.193.146.14',
+        host: 'localhost',
         port: 5432,
         username: 'postgres',
-        password: 'pass123',
+        password: 'postgres',
         database: 'postgres',
         autoLoadEntities: true,
         synchronize: true,
