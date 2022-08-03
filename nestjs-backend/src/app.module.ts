@@ -6,6 +6,8 @@ import { AppService } from './app.service';
 import { PostModule } from './post/post.module';
 import { GoogleAuthModule } from './google-auth/google-auth.module';
 import { ConfigModule } from '@nestjs/config';
+import { UserModule } from './user/user.module';
+import { MyJwtModule } from './jwt/jwt.module';
 
 @Module({
   imports: [
@@ -15,6 +17,8 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    UserModule,
+    MyJwtModule,
   ],
   controllers: [AppController],
   providers: [AppService],

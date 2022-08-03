@@ -1,0 +1,1 @@
+curl -X PATCH -H "Content-Type: application/json" -d '{"email": "PATCH", "firstName": "PATCH", "lastName": "lastName"}' 'http://localhost:3000/user/$1'

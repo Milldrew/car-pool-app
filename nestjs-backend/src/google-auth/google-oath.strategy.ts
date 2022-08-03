@@ -1,12 +1,20 @@
+import { CreateUserDto } from 'src/user/dto/create-user.dto';
 // https://github.com/thisismydesign/nestjs-starter/blob/master/src/server/app/auth/google/google-oauth.strategy.ts
 import { PassportStrategy } from '@nestjs/passport';
 import { Profile, Strategy } from 'passport-google-oauth20';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { UserService } from 'src/user/user.service';
+import { JwtService } from '@nestjs/jwt';
+import { SignService } from 'src/jwt/sign/sign.service';
 
 @Injectable()
 export class GoogleOauthStrategy extends PassportStrategy(Strategy, 'google') {
-  constructor(configService: ConfigService) {
+  constructor(
+    private readonly signService: SignService,
+    private readonly userService: UserService,
+    configService: ConfigService,
+  ) {
     console.log('hello from strategy');
     console.log(configService.get('OAUTH_GOOGLE_ID'));
     console.log(configService.get('OAUTH_GOOGLE_SECRET'));
@@ -24,14 +32,19 @@ export class GoogleOauthStrategy extends PassportStrategy(Strategy, 'google') {
     _refreshToken: string,
     profile: Profile,
   ) {
-    console.log(profile);
-    console.log('HELLO FORM VALIDATE');
-    const user = {
-      provider: 'google',
-      providerId: 123,
-      name: 'name',
-      username: 'username',
+    const { sub, email, picture, family_name, given_name } = profile._json;
+    const createUserDto: CreateUserDto = {
+      userId: sub,
+      email,
+      firstName: given_name,
+      lastName: family_name,
+      photoUrl: picture,
     };
-    return user;
+    this.userService.create(createUserDto);
+    const jwtClaim = { sub };
+    console.log(jwtClaim);
+    const jwt = this.signService.signJwt(jwtClaim);
+    console.log({ jwt });
+    return jwt;
   }
 }
